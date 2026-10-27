@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "Neighborhood",
+    "slug": "neighborhood-issue-reporter",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "neighborhood",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.neighborhood.issuereporter",
+      "config": { "usesNonExemptEncryption": false }
+    },
+    "android": {
+      "package": "com.neighborhood.issuereporter",
+      "adaptiveIcon": {
+        "backgroundColor": "#E7F0E9",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      }
+    },
+    "web": { "favicon": "./assets/favicon.png", "bundler": "metro" },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Neighborhood to select a photo of a community issue.",
+          "cameraPermission": "Allow Neighborhood to photograph a community issue.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow Neighborhood to locate the issue you are reporting and find reports near you."
+        }
+      ],
+      [
+        "expo-splash-screen",
+        { "backgroundColor": "#F5F6F3", "image": "./assets/splash-icon.png", "imageWidth": 140 }
+      ]
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+project_id = "local-issue-reporter"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "http://localhost:8081"
+additional_redirect_urls = ["http://localhost:8081"]
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true
+
+[storage]
+enabled = true
+file_size_limit = "6MiB"
+
+[functions.analyze-report]
+enabled = true
+# The function itself verifies every JWT through Supabase Auth getUser(token).
+# This also supports projects using asymmetric JWT signing keys.
+verify_jwt = false
+entrypoint = "./functions/analyze-report/index.ts"

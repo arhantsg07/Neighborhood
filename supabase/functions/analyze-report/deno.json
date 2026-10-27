@@ -1,0 +1,11 @@
+{
+  "nodeModulesDir": "none",
+  "imports": { "@supabase/supabase-js": "npm:@supabase/supabase-js@2.49.8" },
+  "compilerOptions": {
+    "strict": true
+  },
+  "tasks": {
+    "check": "deno check index.ts",
+    "test": "deno test handler_test.ts"
+  }
+}
